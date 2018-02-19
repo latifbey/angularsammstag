@@ -1,0 +1,51 @@
+<p>
+  home works!
+</p>
+here are the api function calls
+<div *ngIf='result' [ngClass]="{'success': result.status=='success', 'error': result.status!=='success'}">
+  {{result.message}}
+</div>
+<form novalidate  *ngIf='person'>
+<div>
+  <span>Personal Number:</span>
+  <input type="text" name='persnr' [(ngModel)]='person.persnr'>
+</div>
+<div>
+  <span>Personal Name</span>
+  <input type="text" name='name' [(ngModel)]='person.name'>
+</div>
+<div>
+  <span>Personal Tel</span>
+  <input type="text" name='tel' [(ngModel)]='person.tel'>
+</div>
+<div>
+  <span>Salaer</span>
+  <input type="text" name='salaer' [(ngModel)]='person.salaer'>
+</div>
+<div>
+  <span>Chef Number</span>
+  <input type="text" name='chef' [(ngModel)]='person.chef'>
+</div>
+<div>
+  <span>Abteilung Number</span>
+  <input type="text" name='abtnr' [(ngModel)]='person.abtnr'>
+</div>
+<div>
+  <span>wohnort</span>
+  <input type="text" name='wohnort' [(ngModel)]='person.wohnort'>
+</div>
+<div>
+  <span>bonus:</span>
+  <input type="text" name='bonus' [(ngModel)]='person.bonus'>
+</div>
+<div>
+  <span>eintrittsdatum:</span>
+  <input type="text" name='eintrittsdatum' [(ngModel)]='person.eintrittsdatum'>
+</div>
+</form>
+<p>
+  <button (click)='createPerson()'>CREATE</button>
+  <button (click)='updatePerson(person)'>UPDATE</button>
+  <button (click)='getByPersNr()'>GET</button>
+  <button (click)='deletePerson()'>DELETE</button>
+</p>
